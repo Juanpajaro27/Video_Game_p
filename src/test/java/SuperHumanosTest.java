@@ -39,7 +39,7 @@ class SuperHumanosTest {
 
     @Test
     public void TestDefensaFerrea(){
-        SuperHumanos suhumanos = new SuperHumanos(50,"Angel",100,80,10);
+        SuperHumanos suhumanos = new SuperHumanos(60,"Angel",100,80,10);
         int defensaextra = 20;
 
         defensaextra = defensaextra + suhumanos.getDefensa();
