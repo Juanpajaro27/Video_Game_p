@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Artificial.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">VideoGame_P2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Artificial.java</span></div><h1>Artificial.java</h1><pre class="source lang-java linenums">public class Artificial extends Personajes implements IFichaB {
+    public int fuerzaArtificial;
+
+    public Artificial(int fuerzaArtificial, String nombre, int vida, int defensa, int fuerza) {
+<span class="nc" id="L5">        super(nombre, vida, defensa, fuerza);</span>
+<span class="nc" id="L6">        this.fuerzaArtificial = fuerzaArtificial;</span>
+<span class="nc" id="L7">    }</span>
+
+    public int getFuerzaArtificial() {
+<span class="nc" id="L10">        return fuerzaArtificial;</span>
+    }
+
+    public void setFuerzaArtificial(int fuerzaArtificial) {
+<span class="nc" id="L14">        this.fuerzaArtificial = fuerzaArtificial;</span>
+<span class="nc" id="L15">    }</span>
+
+    @Override
+    public int ataque(int fuerzaextra) {
+<span class="nc" id="L19">        int fuerza_total=0;</span>
+<span class="nc" id="L20">        fuerza_total= fuerza + fuerzaArtificial + fuerzaextra;</span>
+<span class="nc" id="L21">        return fuerza_total;</span>
+    }
+
+    @Override
+    public int setVida(int a, int b) {
+<span class="nc" id="L26">        int vida=100;</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">        if((a-b) &gt; 0 ){</span>
+<span class="nc" id="L28">            vida= vida-(a-b);</span>
+        }else{
+<span class="nc" id="L30">            vida=0;</span>
+        }
+<span class="nc" id="L32">        return vida;</span>
+    }
+
+    @Override
+    public int Ataquesimple() {
+<span class="nc" id="L37">        int extrapoder=0;</span>
+<span class="nc" id="L38">        extrapoder = Artificial.fuerzaExtra;</span>
+<span class="nc" id="L39">        System.out.println(&quot;Estas realizando un ataque Simple, con danio &quot;+extrapoder);</span>
+<span class="nc" id="L40">        return extrapoder;</span>
+    }
+
+    @Override
+    public int Defensaferreo(int de, int defen) {
+<span class="nc" id="L45">        int defensaextra=0;</span>
+
+<span class="nc" id="L47">        defensaextra = de + defen;</span>
+<span class="nc" id="L48">        System.out.println(&quot;Artificial esta realizando una defensa ferrea, con efecto de &quot;+ defensaextra);</span>
+<span class="nc" id="L49">        return defensaextra;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
